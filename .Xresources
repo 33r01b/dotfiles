@@ -1,0 +1,40 @@
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.autohint: 0
+Xft.rgba: rgb
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+Xft.dpi: 140
+
+! These might also be useful depending on your monitor and personal preference:
+!! URxvt Appearance
+!URxvt.font: -*-rissole-*
+!URxvt.boldFont: -*-rissole-*
+!URxvt.italicFont: -*-rissole-*
+!URxvt.boldItalicfont: -*-rissole-*
+
+URxvt.font: xft:JetBrains Mono:style=Regular:size=10
+URxvt.boldFont: xft:JetBrains Mono:style=Bold:size=10
+URxvt.italicFont: xft:JetBrains Mono:style=Italic:size=10
+URxvt.boldItalicFont: xft:JetBrains Mono:style=Bold Italic:size=10
+
+URxvt.geometry: 92x24
+URxvt.internalBorder: 24
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
+
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.urgentOnBell: true
+URxvt.depth: 24
