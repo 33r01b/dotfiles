@@ -188,6 +188,8 @@ smart_gaps on
 smart_borders on
 gaps inner 5
 gaps outer 0
+## wallpaper
+exec_always feh --bg-scale ~/Pictures/wall.jpg
 
 # Bind
 ## printscreen
@@ -202,7 +204,7 @@ exec_always setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
 ## touchpad speed
 exec --no-startup-id xinput --set-prop 'Elan Touchpad' 'libinput Accel Speed' 0.7
 ## animations
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --config  ~/.config/i3/picom.conf
 ## keyboard speed
 exec --no-startup-id xset r rate 170 30 
 ## disable beep
