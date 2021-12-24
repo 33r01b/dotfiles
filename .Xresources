@@ -38,3 +38,5 @@ URxvt.cursorUnderline: false
 URxvt.saveline: 2048
 URxvt.urgentOnBell: true
 URxvt.depth: 24
+
+#include "/home/zer0/.colors/urxvt/catppuccin"
