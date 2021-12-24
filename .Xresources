@@ -14,10 +14,10 @@ Xft.dpi: 140
 !URxvt.italicFont: -*-rissole-*
 !URxvt.boldItalicfont: -*-rissole-*
 
-URxvt.font: xft:JetBrains Mono:style=Regular:size=10
-URxvt.boldFont: xft:JetBrains Mono:style=Bold:size=10
-URxvt.italicFont: xft:JetBrains Mono:style=Italic:size=10
-URxvt.boldItalicFont: xft:JetBrains Mono:style=Bold Italic:size=10
+URxvt.font: xft:JetBrains Mono:style=Regular:size=10,xft:TerminessTTF Nerd Font Mono:size=10
+URxvt.boldFont: xft:JetBrains Mono:style=Bold:size=10,xft:TerminessTTF Nerd Font Mono:size=10
+URxvt.italicFont: xft:JetBrains Mono:style=Italic:size=10,xft:TerminessTTF Nerd Font Mono:size=10
+URxvt.boldItalicFont: xft:JetBrains Mono:style=Bold Italic:size=10,xft:TerminessTTF Nerd Font Mono:size=10
 
 URxvt.geometry: 92x24
 URxvt.internalBorder: 24
