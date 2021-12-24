@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# catch first arguments with $1
+case "$1" in
+ -d)
+  xrandr --output DP1 --auto
+  ;;
+ -e)
+  xrandr --output eDP1 --auto
+  ;;
+ -ed)
+  xrandr --output eDP1 --auto --output DP1 --auto --panning 3840x2160+1920+0 --right-of eDP1 --auto
+  ;;
+ -eh)
+  xrandr --output eDP1 --auto --output HDMI2 --auto --panning 1024x768+1920+0 --right-of eDP1 --auto
+  ;;
+ *)
+  # else
+  echo -e "Available commands: \n"
+  echo -e "-d   single work monitor"
+  echo -e "-e   single laptop monitor"
+  echo -e "-ed  multiple laptop & work monitors"
+  echo -e "-eh  multiple laptop & home monitors"
+  echo -e "\n"
+
+  xrandr | grep -A1 'DP\|eDP\|HDMI'
+  ;;
+esac
