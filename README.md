@@ -14,8 +14,10 @@ DE:
     pacman -S xautolock
     pacman -S lxappearance-gtk3
     pacman -S nerdfonts
+    pacman -S imwheel
+
 
 common:
 
-    pacman -s base-devel
+    pacman -S base-devel
     pacman -S rxvt
