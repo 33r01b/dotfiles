@@ -1,11 +1,13 @@
 ## Requirements
 
-    # applets
+applets:
+
     pacman -S network-manager-applet 
     pacman -S volumeicon
     pacman -S blueman
 
-    # DE
+DE:
+
     pacman -S rofi
     pacman -S feh
     pacman -S picom
@@ -13,6 +15,7 @@
     pacman -S lxappearance-gtk3
     pacman -S nerdfonts
 
-    # common
+common:
+
     pacman -s base-devel
     pacman -S rxvt
