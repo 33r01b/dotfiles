@@ -225,10 +225,12 @@ exec --no-startup-id xset -b
 ## monitor clolor profile
 exec --no-startup-id /usr/bin/dispwin -d1 ~/.colors/27f4k.icm
 ## bluetooth
-exec_always --no-startup-id blueman-applet
+exec_always --no-st`rtup-id blueman-applet
 ## network
 exec_always --no-startup-id nm-applet
 ## volume
 exec --no-startup-id volumeicon
 ## load x
 exec --no-startup-id xrdb ~/.Xresources
+## auto lock the screen
+exec --no-startup-id xautolock -detectsleep -time 10 -locker "i3lock -c 000000" &
