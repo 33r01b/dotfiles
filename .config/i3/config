@@ -233,6 +233,6 @@ exec --no-startup-id volumeicon
 ## load x
 exec --no-startup-id xrdb ~/.Xresources
 ## auto lock the screen
-exec --no-startup-id xautolock -detectsleep -time 10 -locker "i3lock -c 000000" &
+exec --no-startup-id xautolock -detectsleep -time 20 -locker "i3lock -c 000000" &
 ## mouse wheel
 exec_always --no-startup-id imwheel --kill
