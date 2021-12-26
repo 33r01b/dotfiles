@@ -12,7 +12,7 @@ case "$1" in
   xrandr --output DP1 --mode 3840x2160 && xrandr --output eDP1 --auto --output DP1 --right-of eDP1 --output HDMI2 --off
   ;;
  -eh)
-  xrandr --output HDMI2 --set audio force-dvi --mode 1280x720 && xrandr --output eDP1 --auto --output HDMI2 --above eDP1 --output DP1 --off
+  xrandr --output HDMI2 --set audio on --mode 1280x720 && xrandr --output eDP1 --auto --output HDMI2 --above eDP1 --output DP1 --off
   ;;
  *)
   # else
