@@ -2,17 +2,17 @@
 
 # catch first arguments with $1
 case "$1" in
- -d)
-  xrandr --output DP1 --auto
-  ;;
  -e)
-  xrandr --output eDP1 --auto
+  xrandr --output eDP1 --auto --output DP1 --off --output HDMI2 --off
+  ;;
+ -d)
+  xrandr --output DP1 --auto --output eDP1 --off --output HDMI2 --off
   ;;
  -ed)
-  xrandr --output eDP1 --auto --output DP1 --auto --panning 3840x2160+1920+0 --right-of eDP1 --auto
+  xrandr --output DP1 --mode 3840x2160 && xrandr --output eDP1 --auto --output DP1 --right-of eDP1 --output HDMI2 --off
   ;;
  -eh)
-  xrandr --output eDP1 --auto --output HDMI2 --auto --panning 1024x768+1920+0 --right-of eDP1 --auto
+  xrandr --output HDMI2 --set audio force-dvi --mode 1280x720 && xrandr --output eDP1 --auto --output HDMI2 --above eDP1 --output DP1 --off
   ;;
  *)
   # else
