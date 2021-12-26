@@ -14,13 +14,21 @@ case "$1" in
  -eh)
   xrandr --output HDMI2 --set audio on --mode 1280x720 && xrandr --output eDP1 --auto --output HDMI2 --above eDP1 --output DP1 --off
   ;;
+ -eo)
+  xrandr --output HDMI2 --set audio on --mode 1920x1080 && xrandr --output eDP1 --auto --output HDMI2 --above eDP1 --output DP1 --off
+  ;;
+ -dup)
+  xrandr --output HDMI2 --set audio on --mode 1920x1080 && xrandr --output eDP1 --auto --output HDMI2 --same-as eDP1 --output DP1 --off
+  ;;
  *)
   # else
   echo -e "Available commands: \n"
-  echo -e "-d   single work monitor"
   echo -e "-e   single laptop monitor"
+  echo -e "-d   single work monitor"
   echo -e "-ed  multiple laptop & work monitors"
   echo -e "-eh  multiple laptop & home monitors"
+  echo -e "-eo  multiple laptop & other monitors"
+  echo -e "-dup duplicate monitors"
   echo -e "\n"
 
   xrandr | grep -A1 'DP\|eDP\|HDMI'
