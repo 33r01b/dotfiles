@@ -219,7 +219,7 @@ exec --no-startup-id xinput --set-prop 'Elan Touchpad' 'libinput Accel Speed' 0.
 ## animations
 exec_always --no-startup-id picom --config  ~/.config/i3/picom.conf
 ## keyboard speed
-exec --no-startup-id xset r rate 170 30 
+exec_always --no-startup-id xset r rate 170 30 
 ## disable beep
 exec --no-startup-id xset -b
 ## monitor clolor profile

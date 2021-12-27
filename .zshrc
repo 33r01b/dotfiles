@@ -19,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/langs/go/bin:$PATH
 export GOPATH=$HOME/langs/go
+export GO111MODULE=on
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
