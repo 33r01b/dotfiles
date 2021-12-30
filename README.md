@@ -15,9 +15,11 @@ DE:
     pacman -S lxappearance-gtk3
     pacman -S nerdfonts
     pacman -S imwheel
+    pacman -S xsetroot
 
 
 common:
 
     pacman -S base-devel
     pacman -S rxvt
+    pacman -S manjaro-pipewire # replace pulseaudio

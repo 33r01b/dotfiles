@@ -1,0 +1,38 @@
+#!/bin/sh
+
+## wallpaper
+feh --bg-scale ~/Pictures/wall.jpg
+
+## locale toogle
+setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
+## swap alt:super
+setxkbmap -option altwin:swap_alt_win
+
+# Autostart
+## touchpad speed
+xinput --set-prop 'Elan Touchpad' 'libinput Accel Speed' 0.7
+## animations
+picom --config  ~/.config/i3/picom.conf &
+## keyboard speed
+xset r rate 170 30 
+## disable beep
+xset -b
+## monitor clolor profile
+dispwin -d1 /home/zer0/.colors/27f4k.icm
+## bluetooth
+blueman-applet &
+## network
+nm-applet &
+## volume
+#volumeicon &
+## load x
+xrdb ~/.Xresources &
+## auto lock the screen
+xautolock -detectsleep -time 20 -locker "i3lock -c 000000" &
+## mouse wheel
+imwheel --kill &
+## status bar
+bash ~/.local/bin/dwm-status &
+
+# start dwm
+exec /usr/local/bin/dwm > /dev/null

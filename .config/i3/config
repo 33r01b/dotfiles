@@ -202,8 +202,10 @@ bindsym --release Print exec --no-startup-id "flameshot gui"
 bindsym $mod+Shift+x exec blurlock
 ## locale toogle
 exec_always setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
+## swap alt:super
+setxkbmap -option altwin:swap_alt_win
 ## runner
-bindsym $mod+d exec rofi -show run
+bindsym $mod+p exec --no-startup-id dmenu_run
 # keybindings for the soundbuttons
 #bindsym XF86AudioMute           exec --no-startup-id amixer set Master toggle
 #bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer set Master 5%+
