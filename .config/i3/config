@@ -201,9 +201,9 @@ bindsym --release Print exec --no-startup-id "flameshot gui"
 ## lock screen
 bindsym $mod+Shift+x exec blurlock
 ## locale toogle
-exec_always setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
+exec_always --no-startup-id setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
 ## swap alt:super
-exec_always setxkbmap -option altwin:swap_alt_win
+exec_always --no-startup-id setxkbmap -option "altwin:swap_alt_win"
 ## runner
 bindsym $mod+p exec --no-startup-id dmenu_run -h 30 -fn "Noto Mono:size=9" -nb "#000000"
 # keybindings for the soundbuttons
