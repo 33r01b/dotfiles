@@ -1,0 +1,71 @@
+#!/bin/bash
+# Network speed stuff stolen from http://linuxclues.blogspot.sg/2009/11/shell-script-show-network-speed.html
+
+print_wifi() {
+	ip=$(ip route get 8.8.8.8 2>/dev/null|grep -Eo 'src [0-9.]+'|grep -Eo '[0-9.]+')
+	if=wlp61s0
+		while IFS=$': \t' read -r label value
+		do
+			case $label in SSID) SSID=$value
+				;;
+			signal) SIGNAL=$value
+				;;
+		esac
+	done < <(iw "$if" link)
+	echo -e "$SSID $SIGNAL  $ip"
+}
+
+print_mem(){
+	echo $(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024)) "MiB"
+}
+
+print_cpu () {
+    cpu_idle=$(top -b -n 1 | grep Cpu | awk '{print $8}'|cut -f 1 -d ".")
+    cpu_use=$(echo $((100 - ${cpu_idle})))
+    echo "cpu ${cpu_use}%"
+}
+
+print_network(){
+	logfile=/dev/shm/netlog
+	[ -f "$logfile" ] || echo "0 0" > "$logfile"
+	read -r rxprev txprev < "$logfile"
+	rxcurrent="$(($(paste -d '+' /sys/class/net/[ew]*/statistics/rx_bytes)))"
+	txcurrent="$(($(paste -d '+' /sys/class/net/[ew]*/statistics/tx_bytes)))"
+	echo "down $(bc <<< "scale=2; ($rxcurrent-$rxprev) / 10^6")" "up $(bc <<< "scale=2; ($txcurrent-$txprev) / 10^6")"
+	echo "$rxcurrent $txcurrent" > "$logfile"
+}
+
+print_temp(){
+	test -f /sys/class/thermal/thermal_zone0/temp || return 0
+	echo $(head -c 2 /sys/class/thermal/thermal_zone0/temp)C
+}
+
+print_bat(){
+	hash acpi || return 0
+	onl="$(grep "on-line" <(acpi -V))"
+	charge="$(awk '{ sum += $1 } END { print sum }' /sys/class/power_supply/BAT*/capacity)"
+	if test -z "$onl"
+	then
+		# suspend when we close the lid
+		#systemctl --user stop inhibit-lid-sleep-on-battery.service
+		echo -e "bat ${charge}%"
+	else
+		# On mains! no need to suspend
+		#systemctl --user start inhibit-lid-sleep-on-battery.service
+		echo -e "bat ${charge}%"
+	fi
+}
+
+print_date(){
+	echo $(date "+%a %m-%d %H:%M")
+}
+
+print_diskspace(){
+    echo $(df -Ph / | tail -1 | awk '{print $4}')
+}
+
+while true
+do
+    echo "$(print_cpu)  $(print_temp)  $(print_mem)  $(print_diskspace)  $(print_network)  $(print_wifi)  $(print_bat)  $(print_date)"
+	sleep 5
+done
