@@ -5,8 +5,6 @@ feh --bg-scale ~/Pictures/wall.jpg
 
 ## locale toogle
 setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
-## swap alt:super
-setxkbmap -option altwin:swap_alt_win
 
 # Autostart
 ## touchpad speed
@@ -19,12 +17,8 @@ xset r rate 170 30
 xset -b
 ## monitor clolor profile
 dispwin -d1 /home/zer0/.colors/27f4k.icm
-## bluetooth
-blueman-applet &
-## network
-nm-applet &
-## volume
-#volumeicon &
+## tray
+xtray &
 ## load x
 xrdb ~/.Xresources &
 ## auto lock the screen

@@ -16,6 +16,8 @@ DE:
     pacman -S nerdfonts
     pacman -S imwheel
     pacman -S xsetroot
+    pacman -S dunst
+    pacman -S stalonetray
 
 
 common:

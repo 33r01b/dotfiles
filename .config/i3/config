@@ -202,8 +202,6 @@ bindsym --release Print exec --no-startup-id "flameshot gui"
 bindsym $mod+Shift+x exec i3lock -c 000000
 ## locale toogle
 exec_always --no-startup-id setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
-## swap alt:super
-exec_always --no-startup-id setxkbmap -option "altwin:swap_alt_win"
 ## runner
 bindsym $mod+p exec --no-startup-id dmenu_run -h 30 -fn "Noto Mono:size=9" -nb "#000000"
 # keybindings for the soundbuttons
@@ -230,8 +228,6 @@ exec --no-startup-id /usr/bin/dispwin -d1 ~/.colors/27f4k.icm
 exec_always --no-startup-id blueman-applet
 ## network
 exec_always --no-startup-id nm-applet
-## volume
-exec --no-startup-id volumeicon
 ## load x
 exec --no-startup-id xrdb ~/.Xresources
 ## auto lock the screen
