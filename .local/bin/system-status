@@ -64,7 +64,7 @@ print_bat(){
 	else
 		# On mains! no need to suspend
 		#systemctl --user start inhibit-lid-sleep-on-battery.service
-		echo -e "bat ${charge}%"
+		echo -e "bat+ ${charge}%"
 	fi
 }
 

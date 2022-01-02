@@ -144,7 +144,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -204,6 +204,7 @@ bindsym $mod+Shift+x exec i3lock -c 000000
 exec_always --no-startup-id setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
 ## runner
 bindsym $mod+p exec --no-startup-id dmenu_run -h 30 -fn "Noto Mono:size=9" -nb "#000000"
+
 # keybindings for the soundbuttons
 #bindsym XF86AudioMute           exec --no-startup-id amixer set Master toggle
 #bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer set Master 5%+
@@ -213,7 +214,17 @@ bindsym $mod+p exec --no-startup-id dmenu_run -h 30 -fn "Noto Mono:size=9" -nb "
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
+## clipmenu show
+bindsym $mod+c exec --no-startup-id CM_MAX_CLIPS=0 CM_HISTLENGTH=12 clipmenu
+## clipmenu clear
+bindsym $mod+Shift+c exec --no-startup-id clipdel -d ".*"
+
 # Autostart
+## sync clip buffers
+exec --no-startup-id autocutsel
+exec --no-startup-id autocutsel -s PRIMARY
+## clipboard manager
+exec --no-startup-id clipmenud
 ## touchpad speed
 exec --no-startup-id xinput --set-prop 'Elan Touchpad' 'libinput Accel Speed' 0.7
 ## animations

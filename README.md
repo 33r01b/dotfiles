@@ -15,6 +15,8 @@ DE:
     pacman -S lxappearance-gtk3
     pacman -S nerdfonts
     pacman -S imwheel
+    pacman -S clipmenu
+    pacman -S autocutsel
     pacman -S xsetroot
     pacman -S dunst
     pacman -S stalonetray
