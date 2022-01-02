@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# catch first arguments with $1
+case "$1" in
+ con)
+  sudo virsh net-list
+  ;;
+ net)
+  sudo virsh net-dhcp-leases default
+  ;;
+ *)
+  # else
+  echo -e "Available commands: \n"
+  echo -e "con      get network list"
+  echo -e "net      get VM's ip address"
+  echo -e "\n"
+  ;;
+esac
