@@ -51,8 +51,8 @@ xset r rate 170 30
 # disable beep
 xset -b
 
-# monitor clolor profile
-dispwin -d1 /home/zer0/.colors/27f4k.icm
+# monitor color profile (see current display option)
+dispwin -d2 /home/zer0/.colors/27f4k.icm
 
 # mouse wheel
 imwheel --kill &
@@ -77,8 +77,12 @@ bash $HOME/.local/bin/dwm-status &
 
 # fixing misbehaving Java applications
 export _JAVA_AWT_WM_NONREPARENTING=1
-export AWT_TOOLKIT=MToolkit 
-wmname LG3D
+# export AWT_TOOLKIT=MToolkit 
+# wmname LG3D
+
+# if jetbrains apps has abysmally slow UI
+# use custom runtuime, like https://github.com/JetBrains/JetBrainsRuntime/releases/tag/jb11_0_12-b11_0_12b1649.1
+
 
 #exec /usr/local/bin/dwm 2> ~/tmp/dwm.log
 exec dwm
