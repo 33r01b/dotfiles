@@ -5,6 +5,7 @@ Common:
     # pacman -S base-devel
     # pacman -S rxvt
     # pacman -S systemd-timesyncd
+    # pacman -S dbus
 
     # systemctl enable systemd-timesyncd.service
 
@@ -78,7 +79,7 @@ DE:
 
     # pacman -S feh
     # pacman -S picom
-    # pacman -S xautolock
+    # pacman -S xss-lock
     # pacman -S lxappearance-gtk3
     # pacman -S gtk3
     # pacman -S imwheel
@@ -86,6 +87,7 @@ DE:
     # pacman -S autocutsel
     # pacman -S xsetroot
     # pacman -S dunst
+    # pacman -S slcok
 
 Fonts:
     

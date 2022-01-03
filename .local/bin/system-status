@@ -80,7 +80,7 @@ print_bluetooth(){
     on=$(bluetoothctl show | grep "Powered: yes")
 	if test "$on"
 	then
-		echo -e " "
+		echo -e "  "
 	fi
 }
 
