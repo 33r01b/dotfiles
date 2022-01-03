@@ -206,7 +206,7 @@ exec_always feh --bg-scale ~/Pictures/wall.jpg
 bindsym --release shift+Print exec --no-startup-id "flameshot screen -c"
 bindsym --release Print exec --no-startup-id "flameshot gui"
 ## lock screen
-bindsym $mod+Shift+x exec slcok
+bindsym $mod+Shift+x exec slock
 ## locale toogle
 exec_always --no-startup-id setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
 ## runner
