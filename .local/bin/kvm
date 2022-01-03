@@ -2,17 +2,17 @@
 
 # catch first arguments with $1
 case "$1" in
- con)
+ net)
   sudo virsh net-list
   ;;
- net)
+ ip)
   sudo virsh net-dhcp-leases default
   ;;
  *)
   # else
   echo -e "Available commands: \n"
-  echo -e "con      get network list"
-  echo -e "net      get VM's ip address"
+  echo -e "net  network list"
+  echo -e "ip   VM's ip address"
   echo -e "\n"
   ;;
 esac

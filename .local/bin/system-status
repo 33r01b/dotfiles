@@ -76,4 +76,12 @@ print_diskspace(){
     echo $(df -Ph / | tail -1 | awk '{print $4}')
 }
 
-echo "$(print_cpu)  $(print_temp)  $(print_mem)  $(print_diskspace)  $(print_network)  $(print_wifi)  $(print_bat)  $(print_date)"
+print_bluetooth(){
+    on=$(bluetoothctl show | grep "Powered: yes")
+	if test "$on"
+	then
+		echo -e " "
+	fi
+}
+
+echo "$(print_cpu)  $(print_temp)  $(print_mem)  $(print_diskspace)  $(print_network)  $(print_wifi)  $(print_bat)  $(print_date)$(print_bluetooth)"

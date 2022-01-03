@@ -27,3 +27,8 @@ export GO111MODULE=on
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias vim=nvim
 alias v=nvim
+
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' menu select

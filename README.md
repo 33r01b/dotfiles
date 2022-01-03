@@ -1,29 +1,136 @@
 ## Requirements
 
-applets:
+Common:
 
-    pacman -S network-manager-applet 
-    pacman -S volumeicon
-    pacman -S blueman
+    # pacman -S base-devel
+    # pacman -S rxvt
+    # pacman -S systemd-timesyncd
+
+    # systemctl enable systemd-timesyncd.service
+
+Shell:
+
+    # pacman -S zsh zsh-completions
+    # chsh -s /bin/zsh
+
+Network:
+
+    # pacman -S networkmanager \
+        nm-connection-editor \
+        networkmanager-openconnect \
+        networkmanager-openvpn \
+        networkmanager-pptp \
+        networkmanager-vpnc \
+        networkmanager-strongswan \
+        networkmanager-l2tp \
+        network-manager-sstp \
+        rp-pppoe 
+
+    # systemctl enable NetworkManager.service
+
+SSH:
+
+    # pacman -S openssh
+
+VPN:
+
+    # pacman -S wireguard-tools
+
+Firewall:
+
+    # pacman -S ufw
+    # systemctl enable ufw.service 
+
+
+Bluetooth:
+
+    # pacman -S bluez bluez-utils
+    # systemctl enable bluetooth.service 
+
+Audio:
+
+    # pacman -S alsa-utils \
+        alsa-plugins \
+        alsa-firmware \
+        alsa-ucm-conf \
+        sof-firmware
+
+    # pacman -S pulseaudio \
+        pulseaudio-alsa \
+        pulseaudio-bluetooth \
+        pulseaudio-equalizer \
+        pulseaudio-jack \
+        pulseaudio-lirc \
+        pulseaudio-zeroconf \
+        pavucontrol
+
+    # pacman -S pipewire \
+        pipewire-alsa \
+        pipewire-pulse \
+        pipewire-jack
+
+Xorg:
+
+    # pacman -S xf86-video-intel mesa lib32-mesa
+    # pacman -S xorg-server xorg-apps
 
 DE:
 
-    pacman -S rofi
-    pacman -S feh
-    pacman -S picom
-    pacman -S xautolock
-    pacman -S lxappearance-gtk3
-    pacman -S nerdfonts
-    pacman -S imwheel
-    pacman -S clipmenu
-    pacman -S autocutsel
-    pacman -S xsetroot
-    pacman -S dunst
-    pacman -S stalonetray
+    # pacman -S feh
+    # pacman -S picom
+    # pacman -S xautolock
+    # pacman -S lxappearance-gtk3
+    # pacman -S gtk3
+    # pacman -S imwheel
+    # pacman -S clipmenu
+    # pacman -S autocutsel
+    # pacman -S xsetroot
+    # pacman -S dunst
+
+Fonts:
+    
+    # pacman -S nerdfonts \
+        terminus-font \
+        profont-otb \
+        ttf-dejavu \
+        ttf-croscore \
+        ttf-droid \
+        gnu-free-fonts \
+        ttf-liberation \
+        noto-fonts \
+        ttf-roboto \
+        ttf-anonymous-pro \
+        otf-fantasque-sans-mono \
+        ttf-fira-mono \
+        ttf-fira-code \
+        ttf-hack \
+        otf-hermit \
+        ttf-inconsolata \
+        ttf-jetbrains-mono \
+        ttf-ubuntu-font-family
+
+Applets (deprecated):
+
+    # pacman -S network-manager-applet 
+    # pacman -S blueman
+    # pacman -S volumeicon
 
 
-common:
+## Usage
 
-    pacman -S base-devel
-    pacman -S rxvt
-    pacman -S manjaro-pipewire # replace pulseaudio
+Bluetooth
+    
+    $ bluetoothctl
+
+Network
+    
+    $ wifi
+
+or
+    
+    $ nmcli
+
+or
+    
+    $ nm-connection-editor
+
