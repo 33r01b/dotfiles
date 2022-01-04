@@ -6,6 +6,7 @@ Common:
     # pacman -S rxvt
     # pacman -S systemd-timesyncd
     # pacman -S dbus
+    # pacman -S xorg-xbacklight
 
     # systemctl enable systemd-timesyncd.service
 
@@ -63,6 +64,7 @@ Audio:
         pulseaudio-jack \
         pulseaudio-lirc \
         pulseaudio-zeroconf \
+        pulsemixer \
         pavucontrol
 
     # pacman -S pipewire \
