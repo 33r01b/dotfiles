@@ -111,6 +111,26 @@ Fonts:
         ttf-jetbrains-mono \
         ttf-ubuntu-font-family
 
+Repositories:
+
+https://github.com/33r01b/dwm - window manager
+
+    $ git clone git@github.com:33r01b/dwm.git ~/.local/src/dwm
+    $ cd ~/.local/src/dwm
+    # make install clean
+
+https://github.com/33r01b/dmenu - dynamic menu
+
+    $ git clone git@github.com:33r01b/dmenu ~/.local/src/dmenu
+    $ cd ~/.local/src/dmenu
+    # make install clean
+
+https://github.com/cdown/clipmenu - clipboard manager
+
+    $ git clone https://github.com/cdown/clipmenu ~/.local/src/clipmenu
+    $ cd ~/.local/src/clipmenu
+    # make install
+
 Applets (deprecated):
 
     # pacman -S network-manager-applet 
