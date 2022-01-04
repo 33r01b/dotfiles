@@ -1,9 +1,16 @@
 #!/bin/bash
 
+dpi=120
+
 on=$(xrandr --listactivemonitors | grep " DP1")
 if test "$on"
 then
-    xrandr --dpi 140
-else
-    xrandr --dpi 120
+    dpi=140
 fi
+
+# set dpi
+xrandr --dpi "$dpi"
+
+# fix gui fonts
+echo "Xft.dpi: ${dpi}" > /tmp/xdpi
+xrdb -merge /tmp/xdpi
