@@ -36,6 +36,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
+# dpi
+dpicmd
+
 # wallpaper
 feh --bg-scale ~/Pictures/wall.jpg
 
@@ -43,7 +46,7 @@ feh --bg-scale ~/Pictures/wall.jpg
 setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
 
 # touchpad speed
-xinput --set-prop 'Elan Touchpad' 'libinput Accel Speed' 0.7
+xinput --set-prop 'Elan Touchpad' 'libinput Accel Speed' 0.5
 
 # keyboard speed
 xset r rate 170 30 

@@ -88,6 +88,7 @@ DE:
     # pacman -S xsetroot
     # pacman -S dunst
     # pacman -S slcok
+    # pacman -S ranger
 
 Fonts:
     
