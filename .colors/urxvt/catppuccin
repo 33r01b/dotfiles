@@ -34,18 +34,3 @@ URxvt.color14: #E5B4E2
 ! white
 URxvt.color7: #DADAE8
 URxvt.color15: #DADAE8
-
-!! URxvt Appearance
-/* URxvt.font: xft:JetBrainsMono Nerd Font:size=13 */
-URxvt.letterSpace: 0
-URxvt.lineSpace: 0
-URxvt.geometry: 92x24
-URxvt.internalBorder: 24
-URxvt.cursorBlink: true
-URxvt.cursorUnderline: false
-URxvt.saveline: 2048
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
-URxvt.urgentOnBell: true
-URxvt.depth: 24
-URxvt.iso14755: false
