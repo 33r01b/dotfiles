@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=dwm
+Comment=improved dynamic tiling window manager
+Exec=/home/zer0/.xinitrc
+TryExec=/home/zer0/.xinitrc
+Type=Application
+X-LightDM-DesktopName=dwm
+DesktopNames=dwm
+Keywords=tiling;wm;windowmanager;window;manager;
