@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dpi=120
+dpi=96
 
 on=$(xrandr --listactivemonitors | grep " DP1")
 if test "$on"
