@@ -160,9 +160,6 @@ toggle_paired() {
             kill $(pgrep -f "bluetoothctl scan on")
             bluetoothctl scan off
         fi
-
-        bluetoothctl trust $1
-        sleep 2
         # END fix 
 
         bluetoothctl pair $1
