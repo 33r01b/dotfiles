@@ -122,6 +122,20 @@ https://github.com/33r01b/dwm - window manager
     $ cd ~/.local/src/dwm
     # make install clean
 
+https://github.com/33r01b/st - terminal
+
+st requires scroll
+
+    $ git clone git@github.com:33r01b/scroll.git ~/.local/src/scroll
+    $ cd ~/.local/src/scroll
+    # make install clean
+
+install st 
+
+    $ git clone git@github.com:33r01b/st.git ~/.local/src/st
+    $ cd ~/.local/src/st
+    # make install clean
+
 https://github.com/33r01b/dmenu - dynamic menu
 
     $ git clone git@github.com:33r01b/dmenu ~/.local/src/dmenu
