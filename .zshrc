@@ -16,8 +16,8 @@ plugins=(git fzf-zsh-plugin)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export VISUAL=vim
-export EDITOR="$VISUAL"v
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/langs/go/bin:$PATH
 export GOPATH=$HOME/langs/go

@@ -55,7 +55,7 @@ xset r rate 170 30
 xset -b
 
 # monitor color profile (see current display option)
-dispwin -d2 /home/zer0/.colors/27f4k.icm
+dispwin -d1 /home/zer0/.colors/27f4k.icm
 
 # mouse wheel
 imwheel --kill &
