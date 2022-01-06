@@ -114,21 +114,28 @@ toggle_connection() {
         bluetoothctl disconnect $1
         device_menu "$device"
     else
+        bluetoothctl connect $1
 
         # BEGIN fix 
-        # bluetoothctl remove $1
-        # kill $(pgrep -f "bluetoothctl scan on")
-        # bluetoothctl scan on &
-        # echo "Scanning..."
-        # sleep 5
-        # bluetoothctl scan off
-        # bluetoothctl trust $1
-        # sleep 2
-        # bluetoothctl pair $1
-        # sleep 3
+        if ! device_connected $1 && device_paired $1; then
+            bluetoothctl remove $1
+
+            if ! scan_on; then
+                bluetoothctl scan on &
+                sleep 5
+                kill $(pgrep -f "bluetoothctl scan on")
+                bluetoothctl scan off
+            fi
+
+            bluetoothctl trust $1
+            sleep 2
+            bluetoothctl pair $1
+            sleep 3
+
+            bluetoothctl connect $1
+        fi
         # END fix 
 
-        bluetoothctl connect $1
         device_menu "$device"
     fi
 }
@@ -151,17 +158,6 @@ toggle_paired() {
         bluetoothctl remove $1
         device_menu "$device"
     else
-        # BEGIN fix 
-        bluetoothctl remove $1
-
-        if scan_on == 0; then
-            bluetoothctl scan on &
-            sleep 5
-            kill $(pgrep -f "bluetoothctl scan on")
-            bluetoothctl scan off
-        fi
-        # END fix 
-
         bluetoothctl pair $1
         device_menu "$device"
     fi
