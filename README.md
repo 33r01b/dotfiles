@@ -1,5 +1,5 @@
 # dotfiles
 
-[Installation](INSTALL.md) \
-[Configuration](CONFIG.md)
+[Installation](INSTALL.md) - Arch Linux installation guide \
+[Configuration](CONFIG.md) - Post-install system configuration
 
