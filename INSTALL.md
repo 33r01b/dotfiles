@@ -166,13 +166,13 @@ Something like this:
     blkid -s UUID -o value /dev/sda2 >> /boot/loader/entries/arch.conf
 
 ### Add the following content to arch.conf
-The partition <UUID> is already in the file.
+The partition \<UUID> is already in the file.
 
 >title Arch Linux \
 >linux /vmlinuz-linux \
 >initrd /intel-ucode.img \
 >initrd /initramfs-linux.img \
->options cryptdevice=UUID=<UUID>:cryptlvm root=/dev/cryptvg/root rw 
+>options cryptdevice=UUID=\<UUID>:cryptlvm root=/dev/cryptvg/root rw 
 
     vim /boot/loader/entries/arch.conf
 
