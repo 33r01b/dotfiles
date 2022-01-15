@@ -19,19 +19,19 @@ rest of disk   8300   home and system \
 
 /boot:
 
-    (gdisk) n // new partition
-    (gdisk) 1 // or <Enter>, first partition
-    (gdisk) <Enter> // first sector, by default
-    (gdisk) +1G // last sector, for /boot
-    (gdisk) ef00 // set efi type
+    (gdisk) n # new partition
+    (gdisk) 1 # or <Enter>, first partition
+    (gdisk) <Enter> # first sector, by default
+    (gdisk) +1G # last sector, for /boot
+    (gdisk) ef00 # set efi type
 
 LVM:
 
-    (gdisk) n // new partition
-    (gdisk) 2 // or <Enter>, second partition
-    (gdisk) <Enter> // first sector, by default
-    (gdisk) <Enter> // last sector, all free space
-    (gdisk) 8300 // set linux type
+    (gdisk) n # new partition
+    (gdisk) 2 # or <Enter>, second partition
+    (gdisk) <Enter> # first sector, by default
+    (gdisk) <Enter> # last sector, all free space
+    (gdisk) 8300 # set linux type
 
 Show changes:
 
