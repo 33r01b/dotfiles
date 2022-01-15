@@ -161,7 +161,7 @@ Something like this:
     echo 'default arch' >> /boot/loader/loader.conf
     echo 'timeout 3' >> /boot/loader/loader.conf
 
-# Get the PARTUUID from the system partition into arch.conf
+### Get the PARTUUID from the system partition into arch.conf
 
     blkid -s UUID -o value /dev/sda2 >> /boot/loader/entries/arch.conf
 
@@ -176,14 +176,14 @@ The partition <UUID> is already in the file.
 
     vim /boot/loader/entries/arch.conf
 
-# Exit new system and go into the cd shell
+### Exit new system and go into the cd shell
 
     exit
 
-# Unmount all
+### Unmount all
 
     umount -R /mnt
 
-# Reboot system
+### Reboot system
 
     shutdown -r now
