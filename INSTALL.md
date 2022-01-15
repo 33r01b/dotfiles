@@ -114,7 +114,7 @@ write:
 
 >LANG=en_US.UTF-8 \
 >LANGUAGE=en_US \
->LC_ALL=C \
+>LC_ALL=C
 
     vim /etc/locale.conf
 
