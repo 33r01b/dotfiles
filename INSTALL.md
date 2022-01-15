@@ -161,7 +161,7 @@ Something like this:
     echo 'default arch' >> /boot/loader/loader.conf
     echo 'timeout 3' >> /boot/loader/loader.conf
 
-### Get the PARTUUID from the system partition into arch.conf
+### Get device UUID from the system partition into arch.conf
 
     blkid -s UUID -o value /dev/sda2 >> /boot/loader/entries/arch.conf
 
