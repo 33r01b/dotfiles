@@ -13,7 +13,7 @@ https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUK
 Remove all partitions \
 Create two new partitions \
 +1GB           ef00   EFI and boot \
-rest of disk   8300   home and system \
+rest of disk   8300   home and system 
 
     gdisk /dev/sda
 
