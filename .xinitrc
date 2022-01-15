@@ -62,7 +62,7 @@ imwheel --kill &
 
 ## sync clipboard buffers
 autocutsel &
-autocutsel -s PRIMARY &
+#autocutsel -s PRIMARY -fork &
 
 ## clipboard
 export CM_MAX_CLIPS=0
@@ -86,6 +86,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # if jetbrains apps has abysmally slow UI
 # use custom runtuime, like https://github.com/JetBrains/JetBrainsRuntime/releases/tag/jb11_0_12-b11_0_12b1649.1
 
-
-#exec /usr/local/bin/dwm 2> ~/tmp/dwm.log
 exec dwm
