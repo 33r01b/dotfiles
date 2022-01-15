@@ -1,6 +1,7 @@
 # Docs
 
 https://wiki.archlinux.org/title/Installation_guide
+
 https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS
 
 # Instalation
@@ -11,8 +12,11 @@ https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUK
 
 ### Partition the disks
 Remove all partitions
+
 Create two new partitions
+
 +1GB           ef00   EFI and boot
+
 rest of disk   8300   home and system
 
     gdisk /dev/sda
@@ -169,9 +173,13 @@ Something like this:
 The partition <UUID> is already in the file.
 
 >title Arch Linux
+
 >linux /vmlinuz-linux
+
 >initrd /intel-ucode.img
+
 >initrd /initramfs-linux.img
+
 >options cryptdevice=UUID=<UUID>:cryptlvm root=/dev/cryptvg/root rw
 
     vim /boot/loader/entries/arch.conf
