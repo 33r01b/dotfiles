@@ -3,7 +3,7 @@
 https://wiki.archlinux.org/title/Installation_guide \
 https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS
 
-# Instalation
+# Installation
 
 ### Update the system clock
 
