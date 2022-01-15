@@ -1,7 +1,6 @@
 # Docs
 
-https://wiki.archlinux.org/title/Installation_guide
-
+https://wiki.archlinux.org/title/Installation_guide \
 https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS
 
 # Instalation
@@ -11,13 +10,10 @@ https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUK
     timedatectl set-ntp true
 
 ### Partition the disks
-Remove all partitions
-
-Create two new partitions
-
-+1GB           ef00   EFI and boot
-
-rest of disk   8300   home and system
+Remove all partitions \
+Create two new partitions \
++1GB           ef00   EFI and boot \
+rest of disk   8300   home and system \
 
     gdisk /dev/sda
 
@@ -106,7 +102,7 @@ Save changes:
 ### Localization
 uncomment:
 
->en_US.UTF-8 UTF-8
+>en_US.UTF-8 UTF-8 \
 >ru_RU.UTF-8 UTF-8
 
     vim /etc/locale.gen
@@ -116,9 +112,9 @@ uncomment:
 ### Create the locale.conf
 write:
 
->LANG=en_US.UTF-8
->LANGUAGE=en_US
->LC_ALL=C
+>LANG=en_US.UTF-8 \
+>LANGUAGE=en_US \
+>LC_ALL=C \
 
     vim /etc/locale.conf
 
@@ -149,7 +145,7 @@ Open mkinitcpio.conf and add the following to each section:
 
 >MODULES=(ext4)
 
-On 'HOOKS' add 'encrypt' before 'filesystem'
+On 'HOOKS' add 'encrypt' before 'filesystem' \
 Something like this:
 
 >HOOKS=(base udev autodetect keyboard keymap modconf block encrypt lvm2 filesystems fsck)
@@ -172,15 +168,11 @@ Something like this:
 ### Add the following content to arch.conf
 The partition <UUID> is already in the file.
 
->title Arch Linux
-
->linux /vmlinuz-linux
-
->initrd /intel-ucode.img
-
->initrd /initramfs-linux.img
-
->options cryptdevice=UUID=<UUID>:cryptlvm root=/dev/cryptvg/root rw
+>title Arch Linux \
+>linux /vmlinuz-linux \
+>initrd /intel-ucode.img \
+>initrd /initramfs-linux.img \
+>options cryptdevice=UUID=<UUID>:cryptlvm root=/dev/cryptvg/root rw 
 
     vim /boot/loader/entries/arch.conf
 
