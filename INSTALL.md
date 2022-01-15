@@ -186,4 +186,4 @@ The partition <UUID> is already in the file.
 
 ### Reboot system
 
-    shutdown -r now
+    reboot
