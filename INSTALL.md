@@ -41,7 +41,7 @@ Save changes:
 
     (gdisk) w // write
 
-### Format boot volumt
+### Format boot partition
 
     mkfs.vfat -n BOOT /dev/sda1
 
