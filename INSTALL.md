@@ -41,7 +41,7 @@ Save changes:
 
     (gdisk) w // write
 
-### Format boot partition
+### Format boot filesystem
 
     mkfs.vfat -n BOOT /dev/sda1
 
@@ -63,7 +63,7 @@ Save changes:
     lvcreate -L 8G cryptvg -n swap
     lvcreate -l 100%FREE cryptvg -n root
 
-### Format your filesystems on each logical volume
+### Format filesystems on each logical volume
 
     mkfs.ext4 /dev/cryptvg/root
     mkswap /dev/cryptvg/swap
