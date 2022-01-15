@@ -128,7 +128,7 @@ write:
 
 ### Create new user
 
-    useradd -m -g users -G wheel,video btw
+    useradd -m -g users -G wheel,audio,video,input,lp,storage,network,power btw
 
 ### Set user password
 
