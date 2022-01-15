@@ -58,17 +58,17 @@ Save changes:
 
     vgcreate cryptvg /dev/mapper/cryptlvm
 
-### Create all logical volumes on the volume group:
+### Create all logical volumes on the volume group
 
     lvcreate -L 8G cryptvg -n swap
     lvcreate -l 100%FREE cryptvg -n root
 
-### Format your filesystems on each logical volume:
+### Format your filesystems on each logical volume
 
     mkfs.ext4 /dev/cryptvg/root
     mkswap /dev/cryptvg/swap
 
-### Mount partitions:
+### Mount partitions
 
     mount /dev/cryptvg/root /mnt
     mkdir /mnt/boot
