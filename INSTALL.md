@@ -145,7 +145,7 @@ Open mkinitcpio.conf and add the following to each section:
 
 >MODULES=(ext4)
 
-On 'HOOKS' add 'encrypt' before 'filesystem' \
+On 'HOOKS' add 'encrypt lvm2' before 'filesystem' \
 Something like this:
 
 >HOOKS=(base udev autodetect keyboard keymap modconf block encrypt lvm2 filesystems fsck)
