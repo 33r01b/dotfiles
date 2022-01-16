@@ -77,9 +77,12 @@ Save changes:
 
 ### Connect to wifi
 
-    nmcli radio wifi on
-    nmcli device wifi list
-    nmcli device wifi connect <SSID>
+    iwctl
+
+    [iwd]# device list
+    [iwd]# station <divice> scan
+    [iwd]# station <device> get-networks
+    [iwd]# station <device> connect <SSID>
 
 ### Install essential packages
 
