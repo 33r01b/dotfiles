@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/zer0/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -9,7 +9,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf-zsh-plugin)
+plugins=(git fzf docker docker-compose)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -26,7 +26,7 @@ export GO111MODULE=on
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # aliases
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias vim=nvim
 alias v=nvim
 
