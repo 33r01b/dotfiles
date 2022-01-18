@@ -1,0 +1,10 @@
+#!/usr/bin/sh
+
+docker run --rm -it \
+    --user $(id -u):$(id -g) \
+    --env COMPOSER_HOME=/.composer \
+    --env COMPOSER_CACHE_DIR=/.cache \
+    --volume $HOME/.config/composer:/.composer \
+    --volume $HOME/.cache/composer:/.cache \
+    --volume $PWD:/app \
+    composer $@
