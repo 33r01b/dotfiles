@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# catch first arguments with $1
+case "$1" in
+ on)
+  nmcli radio wifi on
+  ;;
+ off)
+  nmcli radio wifi off
+  ;;
+ list)
+  nmcli device wifi list
+  ;;
+ rescan)
+  nmcli device wifi rescan
+  ;;
+ connect)
+  nmcli --ask device wifi connect $2
+  ;;
+ delete)
+  nmcli con del $2
+  ;;
+ status)
+  nmcli con show --active
+  ;;
+ up)
+  nmcli con up $2
+  ;;
+ down)
+  nmcli con down $2
+  ;;
+ *)
+  # else
+  echo -e "Available commands: \n"
+  echo -e "on               enable wifi"
+  echo -e "off              disable wifi"
+  echo -e "list             find nearby Wi-Fi networks"
+  echo -e "rescan           rescan Wi-Fi networks"
+  echo -e "connect <SSID>   connect to Wi-Fi by SSID"
+  echo -e "delete <SSID>    delete Wi-Fi connecton by SSID"
+  echo -e "status           show active connecton status"
+  echo -e "up <SSID>        up Wi-Fi connection by SSID"
+  echo -e "down <SSID>      down Wi-Fi connection by SSID"
+  echo -e "\n"
+  ;;
+esac
