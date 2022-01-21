@@ -1,6 +1,7 @@
-autoload -Uz promptinit colors
+autoload -Uz compinit promptinit colors
 promptinit
 colors
+compinit
 
 [ -f ~/.config/zsh/fzf.plugin.zsh ] && source ~/.config/zsh/fzf.plugin.zsh
 
@@ -39,31 +40,26 @@ bindkey '^ ' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-autoload -Uz compinit
-compinit
-
 zstyle ':completion:*' menu select
 
 # Find and set branch name var if in git repository.
 function git_branch_name()
 {
-  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-  if [[ $branch == "" ]];
-  then
-    :
-  else
-      if [ -n "$(git status --porcelain)" ]; then
-          local gitstatuscolor="%F{red}${branch}%f"
-      else
-          local gitstatuscolor="%F{green}${branch}%f"
-      fi
-    echo " %F{white}%f %F{white}[%f${gitstatuscolor}%F{white}]%f"
-  fi
+    branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+    if [[ $branch == "" ]];
+    then
+        :
+    else
+        if [ -n "$(git status --porcelain)" ]; then
+            local gitstatuscolor="%F{red}${branch}%f"
+        else
+            local gitstatuscolor="%F{green}${branch}%f"
+        fi
+        echo " %F{white}%f %F{white}[%f${gitstatuscolor}%F{white}]%f"
+    fi
 }
-
 
 # Enable substitution in the prompt.
 setopt prompt_subst
-
 # Config for prompt. PS1 synonym.
 PROMPT='%F{green}%f  %F{cyan}%B%1/%b%f$(git_branch_name) '
