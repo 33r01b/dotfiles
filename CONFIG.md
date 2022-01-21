@@ -1,10 +1,10 @@
 ### Common
 
     # pacman -S base-devel
-    # pacman -S rxvt
-    # pacman -S systemd-timesyncd
+    # pacman -S rxvt-unicode
     # pacman -S dbus
     # pacman -S xorg-xbacklight
+    # pacman -S openresolv
 
     # systemctl enable systemd-timesyncd.service
     # systemctl start systemd-timesyncd.service

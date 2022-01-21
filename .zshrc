@@ -1,14 +1,30 @@
-autoload -Uz compinit promptinit colors
-promptinit
-colors
-compinit
+# Enable colors
+autoload -U colors && colors
 
+# Completion
+autoload -U compinit
+## basic
+zstyle ':completion:*' menu select
+## case insenstivity
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots) # include hidden files
+
+# History
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE=$HOME/.cache/.zsh_history
+
+# Load zsh-syntax-highlighting (pacman -S zsh-syntax-highlighting)
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+# Search repos for programs that can't be found
+source /usr/share/doc/pkgfile/command-not-found.zsh 2>/dev/null
+
+# Load plugins
 [ -f ~/.config/zsh/fzf.plugin.zsh ] && source ~/.config/zsh/fzf.plugin.zsh
 
 # User configuration
-export HISTFILE=$HOME/.cache/.zsh_history
-export HISTSIZE=10000
-export SAVEHIST=10000
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/.npm-global/bin:$PATH
@@ -16,9 +32,7 @@ export PATH=$HOME/langs/go/bin:$PATH
 export GOPATH=$HOME/langs/go
 export GO111MODULE=on
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# aliases
+# Aliases
 alias dot='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias vim=nvim
 alias v=nvim
@@ -27,20 +41,20 @@ alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto' 
 alias fgrep='fgrep --colour=auto'
 
-### ctrl+arrows
+# Keybindings
+## ctrl+arrows
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
-# urxvt
+## ctrl + space to accept the current zsh-autosuggestions
+bindkey '^ ' autosuggest-accept
+## urxvt
 bindkey "\eOc" forward-word
 bindkey "\eOd" backward-word
-# ctrl + space to accept the current zsh-autosuggestions
-bindkey '^ ' autosuggest-accept
-
 # history
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-zstyle ':completion:*' menu select
+#autoload -U promptinit && promptinit
 
 # Find and set branch name var if in git repository.
 function git_branch_name()

@@ -36,11 +36,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
+dm -d
+
 # dpi
 dpicmd
 
 # wallpaper
-feh --bg-scale ~/Pictures/wall.jpg
+feh --bg-scale ~/pictures/wall.jpg
 
 # locale toogle
 setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
@@ -55,7 +57,7 @@ xset r rate 170 30
 xset -b
 
 # monitor color profile (see current display option)
-dispwin -d1 /home/zer0/.colors/27f4k.icm
+dispwin -d2 ~/.colors/27f4k.icm
 
 # mouse wheel
 imwheel --kill &

@@ -84,4 +84,4 @@ print_bluetooth(){
 	fi
 }
 
-echo "$(print_cpu)  $(print_temp)  $(print_mem)  $(print_diskspace)  $(print_network)  $(print_wifi)  $(print_bat)  $(print_date)$(print_bluetooth)"
+echo "$(print_cpu)  $(print_temp)  $(print_mem)  $(print_diskspace)  $(print_network)  $(print_bat)  $(print_date)$(print_bluetooth)"
