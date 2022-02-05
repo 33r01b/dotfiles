@@ -67,4 +67,4 @@ URxvt.depth: 24
 *color7: #DADAE8
 *color15: #DADAE8
 
-#include "/home/zer0/.colors/urxvt/catppuccin"
+!include "/home/zer0/.colors/urxvt/catppuccin"

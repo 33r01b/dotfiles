@@ -42,7 +42,7 @@ dm -d
 dpicmd
 
 # wallpaper
-feh --bg-scale ~/pictures/wall.jpg
+feh --bg-scale ~/pictures/wall-green.jpg
 
 # locale toogle
 setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
@@ -57,7 +57,7 @@ xset r rate 170 30
 xset -b
 
 # monitor color profile (see current display option)
-dispwin -d2 ~/.colors/27f4k.icm
+dispwin -d1 ~/.colors/27f4k.icm
 
 # mouse wheel
 imwheel --kill &
