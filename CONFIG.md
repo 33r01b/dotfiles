@@ -76,7 +76,7 @@
 
 ### Xorg
 
-    # pacman -S xf86-video-intel mesa lib32-mesa
+    # pacman -S xf86-video-intel mesa lib32-mesa intel-media-driver
     # pacman -S xorg-server xorg-apps
 
 ### DE
