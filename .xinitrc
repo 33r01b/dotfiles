@@ -49,6 +49,7 @@ setxkbmap -layout us,ru -option "grp:caps_toggle,grp_led:caps"
 
 # touchpad speed
 xinput --set-prop 'Elan Touchpad' 'libinput Accel Speed' 0.5
+xinput --set-prop 'Apple Inc. Magic Trackpad 2' 'libinput Accel Speed' 0.5
 
 # keyboard speed
 xset r rate 170 30 
