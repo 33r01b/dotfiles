@@ -14,6 +14,11 @@
     # pacman -S zsh zsh-completions
     # chsh -s /bin/zsh
 
+### CPU (intel)
+
+    # pacman -S x86_energy_perf_policy i7z
+    # x86_energy_perf_policy --turbo-enable 0
+
 ### Network
 
     # pacman -S networkmanager \
