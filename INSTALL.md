@@ -1,45 +1,83 @@
 # Docs
 
-https://wiki.archlinux.org/title/Installation_guide \
+https://wiki.archlinux.org/title/installation_guide \
 https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS
 
 # Installation
 
-### Update the system clock
+### Set the console keyboard layout and font
+```
+# ls /usr/share/kbd/consolefonts/
+# setfont ter-m20b
+```
 
-    timedatectl set-ntp true
+### Connect to the internet
+```
+# iwctl
+
+[iwd]# device list
+[iwd]# station <divice> scan
+[iwd]# station <device> get-networks
+[iwd]# station <device> connect <SSID>
+```
+
+### Update the system clock
+```
+# timedatectl
+```
 
 ### Partition the disks
-Remove all partitions \
+Delete all partitions \
 Create two new partitions \
-+1GB           ef00   EFI and boot \
-rest of disk   8300   home and system 
++1GB EFI system \
+rest of disk Linux filesystem
 
-    gdisk /dev/sda
+Identify devices
+```
+# fdisk -l
+```
+or
+```
+# lsblk
+```
 
-/boot:
+Modify partition table
+```
+# fdisk /dev/sda
 
-    (gdisk) n // new partition
-    (gdisk) 1 // or <Enter>, first partition
-    (gdisk) <Enter> // first sector, by default
-    (gdisk) +1G // last sector, for /boot
-    (gdisk) ef00 // set efi type
+[fidsk]# p // print the partition table
+[fidsk]# d // delete all partitions
+```
+
+/boot
+```
+[fidsk]# n // new partition
+[fidsk]# 1 // or <Enter>, first partition
+[fidsk]# <Enter> // first sector, by default
+[fidsk]# +1G // last sector, for /boot
+
+[fidsk]# t // change partition type (EFI)
+```
 
 LVM:
+```
+[fidsk]# n // new partition
+[fidsk]# 2 // or <Enter>, first partition
+[fidsk]# <Enter> // first sector, by default
+[fidsk]# <Enter> // last sector, all free space
 
-    (gdisk) n // new partition
-    (gdisk) 2 // or <Enter>, second partition
-    (gdisk) <Enter> // first sector, by default
-    (gdisk) <Enter> // last sector, all free space
-    (gdisk) 8300 // set linux type
+[fidsk]# t // change partition type (Linux filesystem)
+```
 
 Show changes:
-
-    (gdisk) p
+```
+[fidsk]# p
+```
 
 Save changes:
-
-    (gdisk) w // write
+```
+[fidsk]# w
+```
 
 ### Format boot filesystem
 
@@ -74,15 +112,6 @@ Save changes:
     mkdir /mnt/boot
     mount /dev/sda1 /mnt/boot
     swapon /dev/cryptvg/swap
-
-### Connect to wifi
-
-    iwctl
-
-    [iwd]# device list
-    [iwd]# station <divice> scan
-    [iwd]# station <device> get-networks
-    [iwd]# station <device> connect <SSID>
 
 ### Install essential packages
 
