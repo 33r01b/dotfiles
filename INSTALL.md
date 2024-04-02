@@ -1,6 +1,7 @@
 # Docs
 
 https://wiki.archlinux.org/title/installation_guide \
+https://wiki.archlinux.org/title/Dm-crypt/Drive_preparation \
 https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS
 
 # Installation
@@ -82,6 +83,11 @@ Save changes:
 ### Format boot filesystem
 
     mkfs.vfat -n BOOT /dev/sda1
+
+### Wipe on an empty partition
+    cryptsetup open --type plain -d /dev/urandom --sector-size 4096 /dev/sda2 to_be_wiped
+    dd if=/dev/zero of=/dev/mapper/to_be_wiped status=progress bs=1M
+    cryptsetup close to_be_wiped
 
 ### Create LUKS device
 
