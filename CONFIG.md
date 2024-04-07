@@ -86,18 +86,23 @@
 
 ### DE
 
+    # pacman -S xorg-xinit
+    # pacman -S xorg-xsetroot
+    # pacman -S acpi
+    # pacman -S acpid
     # pacman -S feh
     # pacman -S picom
-    # pacman -S xss-lock
     # pacman -S lxappearance-gtk3
     # pacman -S gtk3
     # pacman -S imwheel
     # pacman -S clipmenu
     # pacman -S autocutsel
-    # pacman -S xsetroot
     # pacman -S dunst
     # pacman -S slcok
+    # pacman -S xss-lock
     # pacman -S ranger
+    # pacman -S ripgrep
+    # pacman -S argyllcms
 
 ### Fonts
     
