@@ -1,5 +1,6 @@
 ### TTY
 
+    # pacman -S terminus-font
     # ls /usr/share/kbd/consolefonts/
     # setfont ter-m20b
     
