@@ -1,3 +1,12 @@
+### TTY
+
+    # ls /usr/share/kbd/consolefonts/
+    # setfont ter-m20b
+    
+To make that font permanent update the /etc/vconsole.conf file
+
+    FONT=ter-m20b
+    
 ### Common
 
     # pacman -S base-devel
