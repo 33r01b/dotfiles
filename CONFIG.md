@@ -29,6 +29,11 @@ To make that font permanent update the /etc/vconsole.conf file
     # pacman -S x86_energy_perf_policy i7z
     # x86_energy_perf_policy --turbo-enable 0
 
+### Power management
+
+    sudo pacman -S powertop
+    sudo powertop --auto-tune
+
 ### Yay
 
     sudo git clone https://aur.archlinux.org/yay.git
